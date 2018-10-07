@@ -6,12 +6,17 @@ Plan
 ====
 
 Go with a HTTP polling option first.  get familiar with it, then look at a web socket solution
-Use geolocation api to get location from web browser: https://www.mrc-productivity.com/techblog/?p=1082
+Use geolocation api to get location from web browser: 
+https://www.mrc-productivity.com/techblog/?p=1082
+https://developers.google.com/web/fundamentals/native-hardware/user-location/
 
 
 
 
 =================================
+https://www.pivotaltracker.com/n/projects/2202896
+https://serverless-stack.com/
+https://github.com/jag-ermeister/gps_app
 http://jg-gps-app.s3-website-us-west-2.amazonaws.com/
 ./env.sh > env.js
 aws s3 sync . s3://jg-gps-app

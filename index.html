@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    
+
   <head>
     <style>
       #map {
@@ -14,16 +14,51 @@
   <body>
     <h3>My Sweet App</h3>
     
+    <div id="location-details">
+            <div>Current Latitude: <span id="currentLat"></span></div>
+            <div>Current Longitude: <span id="currentLong"></span></div>
+        </div>
+
     <div id="map"></div>
+
     <script>
-        function initMap() {
+        function geoLocationStuff() {
+            var geoOptions = {
+                timeout: 10 * 1000
+            }
+
+            var geoSuccess = function(position) {
+                document.getElementById('currentLat').innerHTML = position.coords.latitude;
+                document.getElementById('currentLong').innerHTML = position.coords.longitude;
+            };
+
+            var geoError = function(error) {
+                console.log('Error occurred. Error code: ' + error.code);
+                // error.code can be:
+                //   0: unknown error
+                //   1: permission denied
+                //   2: position unavailable (error response from location provider)
+                //   3: timed out
+            };
+
+            navigator.geolocation.watchPosition(geoSuccess, geoError, geoOptions);
+        }
+
+        function initApp() {
             var uluru = {lat: -25.344, lng: 131.036};
             var map = new google.maps.Map(document.getElementById('map'), {zoom: 4, center: uluru});
             var marker = new google.maps.Marker({position: uluru, map: map});
+
+            if (!navigator.geolocation) {
+                alert('Geolocation is not supported for this Browser/OS.');
+                return;
+            }
+
+            geoLocationStuff();
         }
     </script>
 
-    <script>document.write('<script async defer src="https://maps.googleapis.com/maps/api/js?key=' + env.API_KEY  + '&callback=initMap"><\/script>'); </script>
+    <script>document.write('<script async defer src="https://maps.googleapis.com/maps/api/js?key=' + env.API_KEY  + '&callback=initApp"><\/script>');</script>
   
 </body>
 </html>
