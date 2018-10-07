@@ -14,6 +14,9 @@ Map API documentation:
 https://developers.google.com/maps/documentation/javascript/tutorial
 https://developers.google.com/maps/documentation/javascript/markers
 
+Get SSL Working:
+https://www.josephecombs.com/2018/03/05/how-to-make-an-AWS-S3-static-website-with-ssl
+
 
 
 
@@ -23,5 +26,8 @@ https://www.pivotaltracker.com/n/projects/2202896
 https://serverless-stack.com/
 https://github.com/jag-ermeister/gps_app
 http://jg-gps-app.s3-website-us-west-2.amazonaws.com/
+=================================
+python -m SimpleHTTPServer
+
 ./env.sh > env.js
 aws s3 sync . s3://jg-gps-app
