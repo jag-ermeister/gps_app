@@ -10,10 +10,15 @@ Use geolocation api to get location from web browser:
 https://www.mrc-productivity.com/techblog/?p=1082
 https://developers.google.com/web/fundamentals/native-hardware/user-location/
 
+Map API documentation:
+https://developers.google.com/maps/documentation/javascript/tutorial
+https://developers.google.com/maps/documentation/javascript/markers
+
 
 
 
 =================================
+https://console.cloud.google.com/
 https://www.pivotaltracker.com/n/projects/2202896
 https://serverless-stack.com/
 https://github.com/jag-ermeister/gps_app
