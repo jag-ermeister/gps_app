@@ -1,5 +1,13 @@
 function googleGeolocationApiStuff(map, marker) {
+    window.setInterval(function() {
+        makeAndHandleRequest(map, marker);
+    }, 10000);
+    
+}
+
+function makeAndHandleRequest(map, marker) {
     var geoSuccess = function(position) {
+        console.log(position);
         document.getElementById('currentLat').innerHTML = position.location.lat;
         document.getElementById('currentLong').innerHTML = position.location.lng;
 
